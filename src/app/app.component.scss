@@ -1,0 +1,145 @@
+$base-color: #151B29;
+$base-color-lighter: #232E47;
+$orange-player: #FE8126;
+$blue-player: #4FFFFA;
+$yellow-player: #F0FE53;
+$green-player: #B2FF60;
+$red-player: #FE1717;
+$pink-player: #ff1493;
+$gray-time-status: gray;
+$transition-on: 0.2s;
+$transition-off: 0.5s;
+
+.game {
+  background-color: $base-color;
+  border: 8px solid $base-color-lighter;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .player {
+    width: 620px;
+    height: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid;
+    position: relative;
+    cursor: pointer;
+
+    &-one {
+      transform: rotate(180deg);
+    }
+
+    .player-display {
+      font-size: 4rem;
+    }
+
+    .time-display {
+      font-size: 5rem;
+    }
+  }
+
+  .container-colors {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .controller {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 50px;
+    transition: background-color $transition-on;
+    margin: 0 20px;
+    width: 50px;
+  }
+
+  .button-blue {
+    background-color: darken($blue-player, 50%);
+    border-color: $blue-player;
+    color: $blue-player;
+
+    &:hover {
+      background-color: $blue-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .button-red {
+    background-color: darken($red-player, 50%);
+    border-color: $red-player;
+    color: $red-player;
+
+    &:hover {
+      background-color: $red-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .button-orange {
+    background-color: darken($orange-player, 50%);
+    border-color: $orange-player;
+    color: $orange-player;
+
+    &:hover {
+      background-color: $orange-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .button-yellow {
+    background-color: darken($yellow-player, 50%);
+    border-color: $yellow-player;
+    color: $yellow-player;
+
+    &:hover {
+      background-color: $yellow-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .button-green {
+    background-color: darken($green-player, 50%);
+    border-color: $green-player;
+    color: $green-player;
+
+    &:hover {
+      background-color: $green-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .button-pink {
+    background-color: darken($pink-player, 50%);
+    border-color: $pink-player;
+    color: $pink-player;
+
+    &:hover {
+      background-color: $pink-player;
+      color: $base-color;
+      transition: all $transition-off;
+    }
+  }
+
+  .finished {
+    background-color: $base-color;
+    border-color: $red-player;
+    color: $red-player;
+  }
+}
