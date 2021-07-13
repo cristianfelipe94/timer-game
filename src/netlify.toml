@@ -1,8 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "/build"
-  base = "/"
-
+  publish = "dist/anglify"
+  command = "ng build --prod"
 [[redirects]]
   from = "/*"
   to = "/index.html"
