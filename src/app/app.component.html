@@ -1,22 +1,20 @@
-<body>
-  <div class="game" id="gamer-getter-js">
-    <section class="player player-one" id="playerOne-getter-js" (click)="startTimer('second-player')">
-      <span class="player-display">Player One</span>
-      <countdown #playerOne class="time-display" [config]="initialTimeConfig" (event)="checkTimesUp($event, 'first-player')"></countdown>
-      <div class="container-colors" *ngIf="!runningTime">
-        <span *ngFor="let controlColor of colors" class="controller" [class]="controlColor" (click)="changeColor(controlColor, 'first-player' )"></span>
-      </div>
-    </section>
-    <section>
-      <button *ngIf="!matchCompleted && runningTime" (click)="pauseTimer()">pause</button>
-      <button (click)="restartTimer()">restart</button>
-    </section>
-    <section  class="player player-two" id="playerTwo-getter-js" (click)="startTimer('first-player')">
-      <span class="player-display">Player Two</span>
-      <countdown #playerTwo class="time-display" [config]="initialTimeConfig" (event)="checkTimesUp($event, 'second-player')"></countdown>
-      <div class="container-colors" *ngIf="!runningTime">
-        <span *ngFor="let controlColor of colors" class="controller" [class]="controlColor" (click)="changeColor(controlColor, 'second-player' )"></span>
-      </div>
-    </section>
-  </div>
-</body>
+<div class="game" id="gamer-getter-js">
+  <section class="player player-one" id="playerOne-getter-js" (click)="startTimer($event, 'second-player')">
+    <span class="player-display">Player One</span>
+    <countdown #playerOne class="time-display" [config]="initialTimeConfig" (event)="checkTimesUp($event, 'first-player')"></countdown>
+    <div class="container-colors" *ngIf="!runningTime">
+      <span *ngFor="let controlColor of colors" class="controller" [class]="controlColor" (click)="changeColor($event, controlColor, 'first-player')"></span>
+    </div>
+  </section>
+  <section>
+    <button *ngIf="!matchCompleted && runningTime" (click)="pauseTimer()">pause</button>
+    <button (click)="restartTimer()">restart</button>
+  </section>
+  <section  class="player player-two" id="playerTwo-getter-js" (click)="startTimer($event, 'first-player')">
+    <span class="player-display">Player Two</span>
+    <countdown #playerTwo class="time-display" [config]="initialTimeConfig" (event)="checkTimesUp($event, 'second-player')"></countdown>
+    <div class="container-colors" *ngIf="!runningTime">
+      <span *ngFor="let controlColor of colors" class="controller" [class]="controlColor" (click)="changeColor($event, controlColor, 'second-player')"></span>
+    </div>
+  </section>
+</div>

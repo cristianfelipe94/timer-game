@@ -22,8 +22,9 @@ $transition-off: 0.5s;
   justify-content: space-around;
 
   .player {
-    width: 620px;
-    height: 320px;
+    max-width: 620px;
+    width: 80vw;
+    height: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -37,11 +38,11 @@ $transition-off: 0.5s;
     }
 
     .player-display {
-      font-size: 4rem;
+      font-size: 2rem;
     }
 
     .time-display {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 
@@ -49,7 +50,7 @@ $transition-off: 0.5s;
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: -65px;
+    top: -40px;
     left: 0;
     right: 0;
     justify-content: center;
@@ -59,80 +60,80 @@ $transition-off: 0.5s;
   .controller {
     border-radius: 50%;
     cursor: pointer;
-    height: 50px;
+    height: 20px;
     transition: background-color $transition-on;
     margin: 0 20px;
-    width: 50px;
+    min-width: 20px;
   }
 
   .button-blue {
-    background-color: darken($blue-player, 50%);
+    background-color: $blue-player;
     border-color: $blue-player;
-    color: $blue-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $blue-player;
-      color: $base-color;
+      background-color: darken($blue-player, 50%);
+      color: $blue-player;
       transition: all $transition-off;
     }
   }
 
   .button-red {
-    background-color: darken($red-player, 50%);
+    background-color: $red-player;
     border-color: $red-player;
-    color: $red-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $red-player;
-      color: $base-color;
+      background-color: darken($red-player, 50%);
+      color: $red-player;
       transition: all $transition-off;
     }
   }
 
   .button-orange {
-    background-color: darken($orange-player, 50%);
+    background-color: $orange-player;
     border-color: $orange-player;
-    color: $orange-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $orange-player;
-      color: $base-color;
+      background-color: darken($orange-player, 50%);
+      color: $orange-player;
       transition: all $transition-off;
     }
   }
 
   .button-yellow {
-    background-color: darken($yellow-player, 50%);
+    background-color: $yellow-player;
     border-color: $yellow-player;
-    color: $yellow-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $yellow-player;
-      color: $base-color;
+      background-color: darken($yellow-player, 50%);
+      color: $yellow-player;
       transition: all $transition-off;
     }
   }
 
   .button-green {
-    background-color: darken($green-player, 50%);
+    background-color: $green-player;
     border-color: $green-player;
-    color: $green-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $green-player;
-      color: $base-color;
+      background-color: darken($green-player, 50%);
+      color: $green-player;
       transition: all $transition-off;
     }
   }
 
   .button-pink {
-    background-color: darken($pink-player, 50%);
+    background-color: $pink-player;
     border-color: $pink-player;
-    color: $pink-player;
+    color: $base-color;
 
     &:hover {
-      background-color: $pink-player;
-      color: $base-color;
+      background-color: darken($pink-player, 50%);
+      color: $pink-player;
       transition: all $transition-off;
     }
   }

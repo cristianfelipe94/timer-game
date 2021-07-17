@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = 'timeController';
   colors = ["button-blue","button-orange","button-red","button-yellow","button-green","button-pink"];
   gameReference: any = "";
-  initialTimeConfig: object = {'leftTime': 5, 'demand': true};
+  initialTimeConfig: object = {'leftTime': this.configureTime(5), 'demand': true, 'format': 'mm:ss'};
   runningTime: boolean = false;
   matchCompleted: boolean = false;
   playerToken: string = '';
@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  changeColor(color: string, player: string) {
+  changeColor($event: any, color: string, player: string) {
+    $event.stopPropagation();
     if (player === "second-player") {
       const getterSecondPlayerController = document.getElementById('playerTwo-getter-js');
       getterSecondPlayerController?.setAttribute('class', `player player-two ${color}`);
@@ -30,7 +31,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  startTimer(roundPlayer: any): void {
+  startTimer($event: any, roundPlayer: any): void {
+    $event.stopPropagation();
     if (!this.matchCompleted) {
       this.runningTime = true;
       if (roundPlayer === 'first-player') {
@@ -76,5 +78,10 @@ export class AppComponent implements OnInit {
         getterFirstPlayerController?.setAttribute('class', 'player player-one finished');
       }
     }
+  }
+
+  configureTime(amount: number): number {
+    let timerInMilisecond = amount * 60;
+    return timerInMilisecond;
   }
 }
